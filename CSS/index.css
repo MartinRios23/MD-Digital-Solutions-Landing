@@ -1,0 +1,663 @@
+/*General*/
+@font-face {
+  font-family: "Sequal";
+  src: URL("../Fonts/Sequel100Black-95.ttf") format("truetype");
+}
+
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-size: 16px;
+  position: relative;
+}
+
+html,
+div,
+li,
+span,
+a,
+body,
+p,
+table,
+input,
+select {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-family: "Montserrat", sans-serif !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*HOME*/
+#home {
+  width: 100%;
+  height: 100vh;
+  background: url(../Images/background/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerCentral {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-direction: column;
+  align-items: center;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+#home #logoDown {
+  width: 58%;
+}
+
+#home #logoUp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 9.5rem;
+  padding-left: 5.7%;
+  padding-top: 1.5%;
+  z-index: 4;
+}
+
+#menu {
+  position: absolute;
+  display: none;
+  width: 2rem;
+  top: 0;
+  right: 0;
+  padding: 1%;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+}
+
+#registerUp {
+  position: absolute;
+  width: 11%;
+  top: 0.5%;
+  right: 0;
+  background-color: white;
+  padding: 0.7%;
+  margin: 2% 4%;
+  text-align: center;
+  text-decoration: none;
+  color: #7aabbc;
+  font-weight: 600;
+  border-radius: 1px;
+  transition: 0.5s;
+}
+
+#registerUp:hover{
+  transform: scale(1.1,1.1);
+  box-shadow: 0px 0px 3px white;
+}
+
+#home h3 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 75%;
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+#home #register {
+  padding: 0% 6.8%;
+  margin: 0 auto;
+  max-width: 90%;
+  height: 6vh;
+  background-color: #7aabbc;
+  text-align: center;
+  line-height: 6vh;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 1px;
+  transition: all 0.5s;
+}
+
+#home #register:hover{
+  font-weight: bold;
+  color: #7aabbc;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 0px 0px 4px white;
+  /* transform: scale(1.1,1.1); */
+}
+
+#openMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #7aabbc;
+  height: 0;
+  width: 0;
+  z-index: 2;
+  overflow: hidden;
+  transition: all 1.5s;
+}
+
+#openMenu a {
+  margin: 5% 8%;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+#openMenu a:first-child {
+  margin-top: 30%;
+}
+
+#openMenu.active {
+  height: 100vh;
+  width: 100vw;
+}
+
+/*SECCION VIDEO*/
+#seccionVideo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #7aabbc;
+  padding: 1.5rem;
+  padding-top: 2.3rem;
+  position: relative;
+}
+
+#seccionVideo h3 {
+  width: 55%;
+  margin: 0;
+  color: white;
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#seccionVideo a {
+  margin-top: 1%;
+  width: 20%;
+  padding: 0.7% 1%;
+  background-color: white;
+  text-decoration: none;
+  color: #7aabbc;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#seccionVideo a:hover{
+  box-shadow: 0px 0px 6px white;
+  font-weight: bold;
+}
+
+#videoContainer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#videoContainer.activeVideo {
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 1s;
+  width: 100%;
+  height: 337vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#video {
+  width: 70%;
+  height: auto;
+}
+
+#closeVideo {
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 120vh;
+  width: 2rem;
+}
+
+/*NIVELES*/
+#niveles {
+  padding: 1% 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#niveles > h2 {
+  margin-top: 5rem;
+  margin-left: 1rem;
+  color: #7aabbc;
+  font-size: 2.2rem;
+  font-family: "Sequal";
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+#aclaration {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: normal;
+}
+
+#contenedorNiveles {
+  margin-top: 1%;
+  background-color: #7aabbc;
+  padding: 1%;
+  padding-bottom: 0.5%;
+}
+
+#contenedorNiveles > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.nivel {
+  width: 90%;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-bottom: 3%;
+  padding: 0% 3%;
+  padding-bottom: 3%;
+  transition: all 0.6s;
+}
+
+.nivel:hover{
+  transform: scale(1.05);
+}
+
+.nivel h2 {
+  margin: 0%;
+  padding: 0%;
+  margin-top: 15%;
+  font-size: 1, 5rem;
+  font-family: "Sequal";
+}
+
+.nivel h4 {
+  width: 100%;
+  margin: 2%;
+  margin-top: 4%;
+  margin-left: -1%;
+  font-family: "Montserrat";
+  letter-spacing: 0.2px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nivel h5 {
+  margin-top: 2%;
+  margin-left: -1%;
+  font-family: "Montserrat";
+  letter-spacing: 0.2px;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.nivel ul {
+  margin: 0;
+  padding: 1%;
+  padding-left: 7%;
+  height: 50%;
+}
+
+.nivel ul li {
+  text-align: left;
+  margin-bottom: 6%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nivel .downLevel1,
+.downLevel2,
+.downLevel3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.downLevel1 {
+  margin-top: 40%;
+}
+
+.downLevel2 {
+  margin-top: 15%;
+}
+
+.downLevel3 {
+  margin-top: 51%;
+}
+
+.nivel a {
+  margin-left: -1%;
+  width: 100%;
+  background-color: #7aabbc;
+  padding: 4% 0%;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: all 0.4s;
+}
+
+.nivel a:hover{
+  box-shadow: 0px 0px 8px #7aabbc;
+}
+
+.nivel p {
+  width: 85%;
+  margin: 0;
+  margin-top: 2%;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/*FOOTER*/
+#footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  width: 100%;
+  background-color: #7aabbc;
+  padding: 4% 0%;
+}
+
+#footer div {
+  padding: 1%;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footer img {
+  width: 5rem;
+}
+
+#footer p {
+  margin-top: 7%;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/*RESPONSIVE*/
+@media screen and (max-width: 600px) {
+  /*Home*/
+
+  #home #logoUp {
+    padding-top: 4%;
+    padding-left: 7%;
+    width: 35%;
+  }
+
+  #home #logoDown {
+    width: 75%;
+  }
+
+  #home h3 {
+    margin-top: 4%;
+    width: 95%;
+    font-size: 0.75rem;
+  }
+
+  #home #register {
+    margin-top: 5%;
+    padding: 0% 10%;
+    font-size: 0.9rem;
+  }
+
+  #menu {
+    display: block;
+    width: 1.4rem;
+    padding: 6%;
+  }
+
+  #registerUp {
+    display: none;
+  }
+
+  /*Seccion Video*/
+
+  #seccionVideo {
+    padding: 8%;
+  }
+
+  #seccionVideo h3 {
+    font-family: "Noto Sans TC";
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    font-size: 0.93rem;
+    line-height: 1rem;
+    letter-spacing: 00.2px;
+  }
+
+  #seccionVideo a {
+    font-size: 0.9rem;
+    padding: 2% 0%;
+    width: 100%;
+  }
+
+  /*Niveles*/
+  #niveles > h2 {
+    font-family: "Sequal";
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+
+  #contenedorNiveles {
+    padding: 10%;
+    padding-bottom: 4%;
+  }
+
+  #contenedorNiveles > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nivel {
+    height: auto;
+    margin-bottom: 15%;
+    padding: 6%;
+  }
+
+  .nivel h2 {
+    font-size: 1rem;
+    margin-top: 5%;
+  }
+
+  .nivel h4 {
+    width: 78%;
+    font-size: 0.7rem;
+    padding: 7%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  .nivel h5 {
+    width: 78%;
+    font-size: 0.7rem;
+    padding: 7%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    font-size: 0.7rem;
+  }
+
+  .nivel ul li {
+    margin: 6%;
+    width: 80%;
+    margin-left: 6%;
+    margin-top: 0%;
+    font-size: 0.7rem;
+  }
+
+  .nivel .downLevel1,
+  .downLevel2,
+  .downLevel3 {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .nivel a {
+    width: 80%;
+    padding: 4% 0%;
+    font-size: 1rem;
+  }
+
+  .nivel p {
+    width: 75%;
+    margin: 0;
+    margin-top: 2%;
+    font-size: 0.7rem;
+  }
+
+  .downLevel1 {
+      margin-top: 15%;
+  }
+
+  .downLevel3{
+      margin-top: 25%;
+  }
+
+  #aclaration {
+    font-family: "Noto Sans TC";
+    font-weight: 100;
+    font-size: 1.1rem;
+  }
+
+  /*Footer*/
+  #footer {
+    padding: 20% 0%;
+  }
+
+  #footer img {
+    width: 3.5rem;
+  }
+  
+  #footer p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 993px) {
+  /*Home*/
+
+  #home h3 {
+    font-size: 1rem;
+  }
+
+  #registerUp {
+    margin-top: 2.5%;
+    width: 22%;
+  }
+
+  /*Seccion Video*/
+  #seccionVideo h3{
+    width: 71%;
+  }
+
+  #seccionVideo a {
+    width: 53%;
+  }
+
+  /*Niveles*/
+  #niveles > h2 {
+    margin-top: 2rem;
+    font-size: 2.2rem;
+  }
+
+  #contenedorNiveles {
+    padding: 8%;
+    padding-bottom: 10%;
+  }
+
+  #contenedorNiveles > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #aclaration {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  #contenedorNiveles h4 {
+    align-items: center;
+  }
+
+  .nivel {
+    height: auto;
+    margin-bottom: 15%;
+    padding: 5%;
+  }
+
+  .nivel h2 {
+    font-size: 2.1rem;
+    margin-top: 5%;
+  }
+
+  .nivel h4,
+  .nivel h5 {
+    font-size: 1rem;
+    margin-left: 2%;
+  }
+
+  .nivel ul li,
+  .nivel p,
+  .nivel a {
+    font-size: 1.2rem;
+  }
+
+  .nivel a {
+    margin-top: 10%;
+  }
+
+  #footer {
+    padding: 20% 0%;
+  }
+}
